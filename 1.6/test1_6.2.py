@@ -9,25 +9,21 @@ try:
 
     input1 = browser.find_element(By.CSS_SELECTOR, ".first_block .form-control.first")
     input1.send_keys("Ivan")
-    input2 = browser.find_element(By.CSS_SELECTOR, ".first_block .form-control.second")
+    input2 = browser.find_element(By.CSS_SELECTOR, ".third")
     input2.send_keys("Petrov")
-    input3 = browser.find_element(By.CSS_SELECTOR, ".first_block .form-control.third")
+    input3 = browser.find_element(By.CSS_SELECTOR, ".second_block > div:nth-child(1) > input:nth-child(2)")
     input3.send_keys("email")
+    input4 = browser.find_element(By.CSS_SELECTOR, ".second")
+    input4.send_keys("sdf")
 
-    # Отправляем заполненную форму
+    time.sleep(1)
+
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
 
-    # Проверяем, что смогли зарегистрироваться
-    # ждем загрузки страницы
-    time.sleep(1)
-
-    # находим элемент, содержащий текст
     welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
-    # записываем в переменную welcome_text текст из элемента welcome_text_elt
     welcome_text = welcome_text_elt.text
 
-    # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
     assert "Congratulations! You have successfully registered!" == welcome_text
 
 finally:

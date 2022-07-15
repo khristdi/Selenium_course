@@ -1,3 +1,6 @@
+from socket import if_nameindex
+
+
 s = 'My Name is Julia'
 
 if 'Name' in s:
@@ -6,3 +9,6 @@ if 'Name' in s:
 index = s.find('Name')
 if index != -1:
     print(f'Substring found at index {index}')
+
+
+    
