@@ -1,4 +1,5 @@
 import unittest
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -59,5 +60,5 @@ class test_class_name(unittest.TestCase):
 
 
 if __name__ == "__main__": 
-        unittest.main()
+        pytest.main()
 
